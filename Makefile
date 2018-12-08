@@ -10,9 +10,14 @@ SRC	= $(CWD)/src
 
 WGET = wget -c -P $(GZ)
 
+.PHONY: all src build
+
 all:
 	LANG=C $(MAKE) src
-	rm -rf build ; mkdir build ; cd build ; cmake ..
+	rm -rf build ; mkdir build ; LANG=C $(MAKE) build
+
+build: 
+	cd build ; ls -la
 
 src: $(SRC)/$(LLVM)/README
 $(SRC)/$(LLVM)/README: $(GZ)/$(LLVM_GZ)
