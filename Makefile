@@ -15,7 +15,7 @@ WGET = wget -c -P $(GZ)
 all:
 	LANG=C $(MAKE) src
 	rm -rf build/*
-	LANG=C $(MAKE) PATH="C:\MinGW\bin;C:\MinGW\CMake\bin" bld
+	LANG=C $(MAKE) PATH="C:\MinGW\bin;C:\MinGW\CMake\bin" build
 
 build:
 	cd build ; cmake $(SRC)/$(LLVM) -G "MinGW Makefiles" 
