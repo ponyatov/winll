@@ -17,7 +17,7 @@ all:
 	rm -rf build ; mkdir build ; LANG=C $(MAKE) build
 
 build: 
-	cd build ; ls -la
+	cd build ; cmake -G "MinGW Makefiles" $(SRC)/$(LLVM)
 
 src: $(SRC)/$(LLVM)/README
 $(SRC)/$(LLVM)/README: $(GZ)/$(LLVM_GZ)
