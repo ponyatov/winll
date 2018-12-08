@@ -14,10 +14,10 @@ WGET = wget -c -P $(GZ)
 
 all:
 	LANG=C $(MAKE) src
-	rm -rf build ; mkdir build
-	LANG=C $(MAKE) PATH="C:\MinGW\bin;C:\MinGW\CMake\bin" build
+	rm -rf build/*
+	LANG=C $(MAKE) PATH="C:\MinGW\bin;C:\MinGW\CMake\bin" bld
 
-build: 
+build:
 	cd build ; cmake $(SRC)/$(LLVM) -G "MinGW Makefiles" 
 
 src: $(SRC)/$(LLVM)/README
