@@ -16,11 +16,11 @@ all:
 	LANG=C $(MAKE) src
 	rm -rf build/*
 	LANG=C $(MAKE) \
-		 PATH="C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\MinGW\CMake\bin" \
+		 PATH="C:\MinGW\bin;;C:\MinGW\CMake\bin" \
 		 	build
 
 build:
-	cd build ; C:\MinGW\CMake\bin\cmake $(SRC)/$(LLVM) -G "MinGW Makefiles" 
+	C:\MinGW\msys\1.0\bin\cd build ; cmake $(SRC)/$(LLVM) -G "MinGW Makefiles" 
 
 src: $(SRC)/$(LLVM)/README
 $(SRC)/$(LLVM)/README: $(GZ)/$(LLVM_GZ)
